@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+@mixin border-shadow {
+  border: 1px solid #1d2f2f;
+  box-shadow: 1px 1px 10px 2px #5c6096;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background: radial-gradient(
+    circle at 4.3% 10.7%,
+    rgb(138, 118, 249) 13.6%,
+    rgb(63, 190, 196) 100.7%
+  );
+  margin: 10px 0;
+}
+
+.editorWrap {
+  max-width: 600px;
+  margin: 1.125rem auto;
+
+  .toolbar {
+    background-color: rgb(138, 118, 249);
+  }
+
+  textarea {
+    width: 100%;
+    height: 200px;
+    margin-bottom: -5px;
+    resize: vertical;
+    padding: 1rem;
+    outline: none;
+    font-size: 1rem;
+    background-color: rgb(194, 185, 247);
+    @include border-shadow;
+    border-top: none;
+  }
+}
+
+.previewWrap {
+  max-width: 800px;
+  margin: 1.25rem auto;
+  min-height: 200px;
+  background-color: rgb(173, 213, 216);
+  border-top: none;
+  @include border-shadow;
+
+  .toolbar {
+    background-color: rgb(67, 187, 197);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  #preview {
+    padding: 0 2.5rem;
+
+    h1 {
+      border-bottom: 2px solid #224b4b;
+    }
+
+    h2 {
+      border-bottom: 1px solid #224b4b;
+    }
+
+    code {
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    pre {
+      padding: 1rem;
+    }
+
+    td,
+    th {
+      border: 2px solid #224b4b;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    blockquote {
+      border-left: 3px solid #224b4b;
+      color: #224b4b;
+      padding-left: 5px;
+      margin-left: 25px;
+    }
+
+    img {
+      display: block;
+      max-width: 90%;
+      margin: 2rem auto;
+    }
+  }
+}
+
+.toolbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.3rem;
+  font-family: Russo One;
+  font-size: 1rem;
+  color: black;
+  @include border-shadow;
+
+  i {
+    width: 25px;
+    margin-left: 5px;
+    display: inline-block;
+  }
+
+  .fa-free-code-camp {
+    margin-right: 3px;
+  }
+
+  .fa-maximize,
+  .fa-down-left-and-up-right-to-center {
+    margin-left: auto;
+  }
+
+  .fa-solid:hover {
+    cursor: pointer;
+    color: #ced0de;
+  }
+}
+
+.maximized {
+  min-height: 100vh;
+
+  textarea {
+    min-height: 95vh;
+    resize: none;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .editorWrap {
+    max-width: 550px;
+  }
+
+  .previewWrap {
+    max-width: 630px;
+  }
+}
+
+@media (max-width: 650px) {
+  .editorWrap {
+    width: 80vw;
+  }
+
+  .previewWrap {
+    width: 90vw;
+  }
+}
